@@ -209,3 +209,9 @@ span在不断的启动和停止，同时记录了时间信息，当你创建了�
 1、需要注入AlwaysSampler
 2、注意设置采样100%即：spring.sleuth.sampler.percentage=1
 3、/info映射已经被actuator占用，无法使用。**
+
+## 8、高可用注册中心集群 Eureka Server ##
+Eureka通过运行多个实例，使其更具有高可用性。事实上，这是它默认的熟性，你需要做的就是给对等的实例一个合法的关联serviceurl。
+解决方法：创建application-peer.properties。
+**peer间相互注册。
+Eureka-eserver peer1,Eureka-eserver peer2相互感应，当有服务注册时，两个Eureka-eserver是对等的，它们都存有相同的信息，这就是通过服务器的冗余来增加可靠性，当有一台服务器宕机了，服务并不会终止，因为另一台服务存有相同的数据。
