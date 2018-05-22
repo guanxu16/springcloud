@@ -1,0 +1,10 @@
+#配置中心地址
+spring.cloud.config.uri=http://localhost:8767/
+
+#即配置文件名字为config-client-dev.properties
+spring.application.name=config-server
+spring.cloud.config.profile=dev
+
+#git分支
+spring.cloud.config.label=master
+server.port=8768
