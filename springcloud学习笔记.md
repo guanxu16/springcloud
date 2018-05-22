@@ -204,3 +204,8 @@ span在不断的启动和停止，同时记录了时间信息，当你创建了�
 将Span和Trace在一个系统中使用Zipkin注解的过程图形化：
 
 ![](http://upload-images.jianshu.io/upload_images/2279594-4b865f2a2c271def.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800)
+
+**遇到的坑
+1、需要注入AlwaysSampler
+2、注意设置采样100%即：spring.sleuth.sampler.percentage=1
+3、/info映射已经被actuator占用，无法使用。**
